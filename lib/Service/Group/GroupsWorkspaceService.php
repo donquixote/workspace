@@ -64,7 +64,7 @@ class GroupsWorkspaceService
 	public function getUserGroup(string $spaceId): IGroup
 	{
 		$groupUser = $this->groupManager->get(
-			GroupsWorkspace::GID_SPACE . GroupsWorkspace::SPACE_USERS . $spaceId
+			GroupsWorkspace::GID_SPACE . GroupsWorkspace::USER_GROUP . $spaceId
 		);
 
 		if (is_null($groupUser))

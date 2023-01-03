@@ -71,11 +71,12 @@
 
 <script>
 import { ESPACE_MANAGERS_PREFIX, ESPACE_USERS_PREFIX, ESPACE_GID_PREFIX } from './constants'
-import Actions from '@nextcloud/vue/dist/Components/Actions'
 import ActionButton from '@nextcloud/vue/dist/Components/ActionButton'
 import ActionInput from '@nextcloud/vue/dist/Components/ActionInput'
+import Actions from '@nextcloud/vue/dist/Components/Actions'
 import Modal from '@nextcloud/vue/dist/Components/Modal'
 import SelectUsers from './SelectUsers'
+import UserGroup from './services/Groups/UserGroup.js'
 import UserTable from './UserTable'
 
 export default {
@@ -99,7 +100,7 @@ export default {
 			// Prevents deleting GE- and U- groups
 			const space = this.$store.state.spaces[this.$route.params.space]
 			if (this.$route.params.group === ESPACE_GID_PREFIX + ESPACE_MANAGERS_PREFIX + space.id
-			|| this.$route.params.group === ESPACE_GID_PREFIX + ESPACE_USERS_PREFIX + space.id) {
+			|| UserGroup.getUserGroup(space) + ESPACE_USERS_PREFIX + space.id) {
 				// TODO Inform user
 				return
 			}

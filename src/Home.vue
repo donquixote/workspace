@@ -308,7 +308,9 @@ export default {
 
 			const GROUPS_WORKSPACE = Object.keys(workspace.groups)
 			const workspaceManagerGid = GROUPS_WORKSPACE.find(isSpaceManagers)
-			const workspaceUserGid = GROUPS_WORKSPACE.find(isSpaceUsers)
+			const workspaceUserGid = GROUPS_WORKSPACE.find(function(group) {
+				return isSpaceUsers(group, workspace)
+			})
 
 			await addGroupToGroupfolder(workspace.folder_id, workspaceManagerGid, this)
 			await addGroupToGroupfolder(workspace.folder_id, workspaceUserGid, this)

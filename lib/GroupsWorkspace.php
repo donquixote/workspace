@@ -12,16 +12,15 @@ class GroupsWorkspace
 	public static function getUserGroup(array $workspace): string
 	{
 		$groups = array_keys($workspace['groups']);
-
 		$regex = '/^' . self::GID_SPACE . self::SPACE_USERS . '[0-9]/';
 		foreach ($groups as $group)
 		{
 			if (preg_match($regex, $group))
 			{
-				return self::GID_SPACE . self::SPACE_USERS;
+				return self::GID_SPACE . self::SPACE_USERS . $workspace['id'];
 			}
 		}
 
-		return self::GID_SPACE . self::USER_GROUP;
+		return self::GID_SPACE . self::SPACE_USERS . $workspace['space_name'];
 	}
 }

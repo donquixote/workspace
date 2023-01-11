@@ -106,17 +106,17 @@ import { generateUrl } from '@nextcloud/router'
 import { get, formatGroups, createGroupfolder, formatUsers, checkGroupfolderNameExist, enableAcl, addGroupToGroupfolder, addGroupToManageACLForGroupfolder } from './services/groupfoldersService.js'
 import { getLocale } from '@nextcloud/l10n'
 import { PATTERN_CHECK_NOTHING_SPECIAL_CHARACTER } from './constants.js'
-import ActionButton from '@nextcloud/vue/dist/Components/ActionButton'
-import AppContent from '@nextcloud/vue/dist/Components/AppContent'
-import AppContentDetails from '@nextcloud/vue/dist/Components/AppContentDetails'
-import AppNavigation from '@nextcloud/vue/dist/Components/AppNavigation'
-import AppNavigationIconBullet from '@nextcloud/vue/dist/Components/AppNavigationIconBullet'
-import AppNavigationItem from '@nextcloud/vue/dist/Components/AppNavigationItem'
-import AppNavigationNewItem from '@nextcloud/vue/dist/Components/AppNavigationNewItem'
+import ActionButton from '@nextcloud/vue/dist/Components/ActionButton.js'
+import AppContent from '@nextcloud/vue/dist/Components/AppContent.js'
+import AppContentDetails from '@nextcloud/vue/dist/Components/AppContentDetails.js'
+import AppNavigation from '@nextcloud/vue/dist/Components/AppNavigation.js'
+import AppNavigationIconBullet from '@nextcloud/vue/dist/Components/AppNavigationIconBullet.js'
+import AppNavigationItem from '@nextcloud/vue/dist/Components/AppNavigationItem.js'
+import AppNavigationNewItem from '@nextcloud/vue/dist/Components/AppNavigationNewItem.js'
 import axios from '@nextcloud/axios'
 import BadCreateError from './Errors/BadCreateError.js'
-import Content from '@nextcloud/vue/dist/Components/Content'
-import Modal from '@nextcloud/vue/dist/Components/Modal'
+import Content from '@nextcloud/vue/dist/Components/Content.js'
+import Modal from '@nextcloud/vue/dist/Components/Modal.js'
 import NotificationError from './services/Notifications/NotificationError.js'
 import SelectGroupfolders from './SelectGroupfolders.vue'
 
@@ -311,7 +311,6 @@ export default {
 			const workspaceUserGid = GROUPS_WORKSPACE.find(function(group) {
 				return isSpaceUsers(group, workspace)
 			})
-
 			await addGroupToGroupfolder(workspace.folder_id, workspaceManagerGid, this)
 			await addGroupToGroupfolder(workspace.folder_id, workspaceUserGid, this)
 

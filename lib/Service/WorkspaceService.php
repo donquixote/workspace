@@ -182,7 +182,7 @@ class WorkspaceService {
 	 *
 	 * Adds users information to a workspace
 	 *
-	 * @param array The workspace to which we want to add users info
+	 * @param array $workspace The workspace to which we want to add users info
 	 *
 	 */
 	public function addUsersInfo($workspace) {
@@ -190,7 +190,7 @@ class WorkspaceService {
 		// from the workspace's manager group, as users may be members of both groups
 		$this->logger->debug('Adding users information to workspace');
 		$users = array();
-		$group = $this->groupManager->get(GroupsWorkspace::getUserGroup($workspace) . $workspace['id']);
+		$group = $this->groupManager->get(GroupsWorkspace::getUserGroup($workspace));
 		// TODO Handle is_null($group) better (remove workspace from list?)
 		if (!is_null($group)) {
 			foreach($group->getUsers() as $user) {

@@ -244,7 +244,7 @@ export default {
 					groups: spaceWithUsersAndGroups.groups,
 					id: spaceWithUsersAndGroups.id,
 					isOpen: false,
-					name: spaceWithUsersAndGroups.space_name,
+					name: spaceWithUsersAndGroups.name,
 					quota,
 					users: spaceWithUsersAndGroups.users,
 				})
@@ -321,7 +321,7 @@ export default {
 				groups: workspace.groups,
 				isOpen: false,
 				id: workspace.id_space,
-				groupfolderId,
+				groupfolderId: groupfolderId.data.id,
 				name,
 				quota: t('workspace', 'unlimited'),
 				users: {},

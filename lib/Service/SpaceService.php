@@ -74,7 +74,7 @@ class SpaceService {
     }
 
     /**
-     * 
+     *
      */
     public function updateSpaceName(string $newSpaceName, int $spaceId) {
         return $this->spaceMapper->updateSpaceName($newSpaceName, $spaceId);
@@ -88,11 +88,11 @@ class SpaceService {
         $checkSpacename = $this->spaceMapper->checkSpaceNameExist($spacename);
 
         if (!is_bool($checkSpacename)) {
-            if (array_key_exists('space_name', $checkSpacename)) {
+            if (array_key_exists('name', $checkSpacename)) {
                 return true;
             }
         }
-        
+
         return false;
     }
 }

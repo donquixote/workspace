@@ -166,7 +166,7 @@ export default {
 					isOpen: false,
 					id: space.id_space,
 					groupfolderId: space.folder_id,
-					name: space.space_name,
+					name: space.name,
 					quota,
 					users: groupstransferoUserGroup.users,
 				})

@@ -139,7 +139,7 @@ class WorkspaceController extends Controller {
 
 		// #3 Returns result
         return new JSONResponse ([
-            'space_name' => $space->getSpaceName(),
+            'name' => $space->getSpaceName(),
             'id_space' => $space->getId(),
             'folder_id' => $space->getGroupfolderId(),
             'color' => $space->getColorCode(),
@@ -188,7 +188,7 @@ class WorkspaceController extends Controller {
                 'message' => 'The space is deleted.'
             ],
             'data' => [
-                'space_name' => $workspace['name'],
+                'name' => $workspace['name'],
                 'groups' => $groups,
                 'space_id' => $workspace['id'],
                 'groupfolder_id' => $workspace['groupfolderId'],

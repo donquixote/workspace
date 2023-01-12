@@ -21,6 +21,6 @@ class GroupsWorkspace
 			}
 		}
 
-		return self::GID_SPACE . self::SPACE_USERS . $workspace['space_name'];
+		return self::GID_SPACE . self::SPACE_USERS . $workspace['name'];
 	}
 }
